@@ -39,6 +39,7 @@ describe("project dossiers", () => {
     expect(screen.getByText("JARVIS-enforced")).toBeInTheDocument();
     expect(screen.getByText("External Codex-enforced")).toBeInTheDocument();
     expect(screen.getByText("Authorization is structural, not linguistic.")).toBeInTheDocument();
+    expect(document.querySelector("#technology > header")).toHaveTextContent("SECTION // 17");
     expect(document.querySelector("#limitations")).toBeInTheDocument();
     expect(screen.queryByRole("link", { name: /view source/i })).not.toBeInTheDocument();
   });

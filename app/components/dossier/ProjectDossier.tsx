@@ -36,7 +36,7 @@ export function ProjectDossier({ project }: { project: Project }) {
     {dossier.limitations ? <CaseStudySection id="limitations" index={index()} title="Not claimed / next engineering boundaries"><TextList items={dossier.limitations} /></CaseStudySection> : null}
     {dossier.retrospective ? <CaseStudySection id="retrospective" index={index()} title="Retrospective"><TextList items={dossier.retrospective} /></CaseStudySection> : null}
     </>}
-    <CaseStudySection id="technology" index={index()} title="Technology"><TechnologyStrip technology={dossier.technology} /></CaseStudySection>
+    <CaseStudySection id="technology" index={dossier.authorityStudy ? "17" : index()} title="Technology"><TechnologyStrip technology={dossier.technology} /></CaseStudySection>
     <SystemNavigation previous={navigation.previous} next={navigation.next} />
   </main>;
 }
