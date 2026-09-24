@@ -42,7 +42,7 @@ jobs:
       - name: Build static Pages export
         run: npm run build:pages
         env:
-          SITE_URL: https://chetanamritanshu.github.io/portfolio
+          SITE_URL: https://chetanamritanshu.github.io/Portfolio
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

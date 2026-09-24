@@ -6,7 +6,7 @@ import globals from "globals";
 import tseslint from "typescript-eslint";
 
 export default tseslint.config(
-  { ignores: ["build", "out", ".next", ".react-router", "node_modules"] },
+  { ignores: ["build", "out", ".next", "*-.next", ".react-router", "node_modules"] },
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
   {

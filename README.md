@@ -19,7 +19,7 @@ npm run build
 npm run build:pages
 ```
 
-The standard build targets a root or custom-domain deployment. `build:pages` validates a repository-subpath deployment at `/portfolio`.
+The standard build targets a root or custom-domain deployment. `build:pages` validates a repository-subpath deployment at `/Portfolio`.
 
 ## Deployment configuration
 
