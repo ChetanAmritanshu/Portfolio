@@ -13,13 +13,17 @@ export function ProjectSelector() {
   const tabRefs = useRef<Array<HTMLButtonElement | null>>([]);
   const selectedProject = projects.find((project) => project.slug === selectedSlug) ?? projects[0];
 
-  const previewProject = (project: (typeof projects)[number], selected = false) => {
+  const selectProject = (project: (typeof projects)[number]) => {
     setSelectedSlug(project.slug);
     dispatchProjectPreview({ slug: project.slug, accent: project.accent });
     dispatchAudioEvent({
-      name: selected ? "system:select" : "system:hover",
+      name: "system:select",
       projectSlug: project.slug,
     });
+  };
+
+  const hoverProject = (project: (typeof projects)[number]) => {
+    dispatchAudioEvent({ name: "system:hover", projectSlug: project.slug });
   };
 
   const onTabKeyDown = (
@@ -39,7 +43,7 @@ export function ProjectSelector() {
 
     if (nextIndex === null) return;
     event.preventDefault();
-    previewProject(projects[nextIndex], true);
+    selectProject(projects[nextIndex]);
     tabRefs.current[nextIndex]?.focus();
   };
 
@@ -62,10 +66,9 @@ export function ProjectSelector() {
               className={project.slug === selectedSlug ? "is-selected" : ""}
               id={`project-tab-${project.slug}`}
               key={project.slug}
-              onClick={() => previewProject(project, true)}
-              onFocus={() => previewProject(project)}
+              onClick={() => selectProject(project)}
               onKeyDown={(event) => onTabKeyDown(event, index)}
-              onPointerEnter={() => previewProject(project)}
+              onPointerEnter={() => hoverProject(project)}
               ref={(node) => {
                 tabRefs.current[index] = node;
               }}
