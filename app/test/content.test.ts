@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { projects } from "~/content/projects";
+import { externalLinks, profile } from "~/content/profile";
 import { assetUrl } from "~/lib/deployment";
 
 describe("portfolio content", () => {
@@ -31,5 +32,17 @@ describe("portfolio content", () => {
     ]);
     expect("links" in jarvis.dossier).toBe(false);
     expect(jarvis.dossier.authorityStudy?.limitations.join(" ")).toContain("do not pass through the local ToolBroker");
+  });
+
+  it("publishes only the supplied verified profile destinations and credentials", () => {
+    expect(profile.codeforces).toEqual({ rank: "Expert", maxRating: 1704 });
+    expect(profile.codechef).toEqual({ rank: "4-Star" });
+    expect(profile.competitiveAchievements).toHaveLength(4);
+    expect(externalLinks.map((link) => link.kind)).toEqual([
+      "resume", "github", "linkedin", "email", "codechef", "codeforces",
+    ]);
+    expect(externalLinks.find((link) => link.kind === "resume")?.href).toBe("/Chetan-Amritanshu-Resume.pdf");
+    expect(externalLinks.find((link) => link.kind === "github")?.href).toBe("https://github.com/ChetanAmritanshu");
+    expect(externalLinks.find((link) => link.kind === "email")?.href).toBe("mailto:chetan.amritanshu@gmail.com");
   });
 });

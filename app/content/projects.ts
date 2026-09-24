@@ -137,6 +137,7 @@ export const projects = [
     themes: ["Go", "RabbitMQ", "Redis", "Circuit breakers"],
     dossier: {
       role: "Backend engineering", mission: "Process high-volume square-off workflows with controlled latency and isolated failure behavior.",
+      disclosure: "Selected implementation and operational details are intentionally omitted due to client confidentiality.",
       context: "The approved professional scope is limited to system-level throughput, resilience mechanisms, and coordination technology; confidential trading logic is intentionally excluded.",
       constraints: ["5K+ trades per minute", "Sub-120 ms P95", "99.9%+ availability", "Idempotent workflow handling"],
       decisions: [{ title: "RabbitMQ workflows", decision: "Use RabbitMQ for asynchronous workflows." }, { title: "Idempotency and recovery", decision: "Use idempotency, retries, and dead-letter queues." }, { title: "Redis coordination", decision: "Use Redis coordination and locking." }, { title: "Fault isolation", decision: "Use circuit breakers, timeouts, and fault isolation." }],
@@ -154,6 +155,7 @@ export const projects = [
     themes: ["Python", "GenAI", "Retrieval", "OpenSearch"],
     dossier: {
       role: "Backend engineering", mission: "Improve product-scale information access across a catalog of more than 50,000 products.",
+      disclosure: "Selected implementation and operational details are intentionally omitted due to client confidentiality.",
       context: "This case study is intentionally constrained to verified retrieval, search, scale, and latency facts.",
       constraints: ["50K+ products", "Product discovery", "Search latency"],
       decisions: [{ title: "OpenSearch retrieval", decision: "Use OpenSearch for product search and retrieval." }, { title: "Python / GenAI backend", decision: "Build the product-discovery backend with Python and GenAI capabilities." }],

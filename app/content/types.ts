@@ -1,7 +1,10 @@
 export type ExternalLink = {
   label: string;
   href: string | null;
-  kind: "resume" | "github" | "linkedin" | "email";
+  kind: "resume" | "github" | "linkedin" | "email" | "codechef" | "codeforces";
+  detail: string;
+  newTab?: boolean;
+  ariaLabel?: string;
 };
 
 export type Metric = {
@@ -53,6 +56,7 @@ export type ProjectDossier = {
   executionFlow?: readonly string[]; decisions?: readonly DesignDecision[]; failureModes?: readonly FailureMode[];
   invariants?: readonly CorrectnessInvariant[]; reliability?: readonly string[]; reliabilityTitle?: string; performance?: Benchmark; tradeoffs?: readonly string[]; results?: readonly string[];
   retrospective?: readonly string[]; limitations?: readonly string[]; technology: readonly string[]; links?: readonly ProjectLink[];
+  disclosure?: string;
   authorityStudy?: AuthorityRuntimeStudy;
 };
 
@@ -80,5 +84,9 @@ export type Profile = {
     rank: string;
     maxRating: number;
   };
+  codechef: {
+    rank: string;
+  };
+  competitiveAchievements: readonly string[];
   currentMode: string;
 };

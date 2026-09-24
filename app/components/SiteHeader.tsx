@@ -62,7 +62,7 @@ export function SiteHeader() {
 
       <div className="header-actions">
         {resume?.href ? (
-          <a href={resume.href}>Resume</a>
+          <a href={resume.href} target="_blank" rel="noopener noreferrer" aria-label={resume.ariaLabel}>Resume</a>
         ) : (
           <span className="link-placeholder" aria-label="Resume link pending">
             Resume // Pending

@@ -30,7 +30,7 @@ export function ProjectDossier({ project }: { project: Project }) {
     {dossier.failureModes ? <CaseStudySection id="failure-modes" index={index()} title="Failure modes"><FailureModeMatrix failures={dossier.failureModes} /></CaseStudySection> : null}
     {dossier.invariants ? <CaseStudySection id="invariants" index={index()} title="Correctness invariants"><InvariantMatrix invariants={dossier.invariants} /></CaseStudySection> : null}
     {dossier.reliability ? <CaseStudySection id="reliability" index={index()} title={dossier.reliabilityTitle ?? "Correctness and reliability"}><TextList items={dossier.reliability} /></CaseStudySection> : null}
-    {dossier.performance ? <CaseStudySection id="performance" index={index()} title="Performance evidence"><BenchmarkPanel benchmark={dossier.performance} /></CaseStudySection> : null}
+    {dossier.performance ? <CaseStudySection id="performance" index={index()} title="Performance evidence"><BenchmarkPanel benchmark={dossier.performance} limitedDisclosure={Boolean(dossier.disclosure)} /></CaseStudySection> : null}
     {dossier.tradeoffs ? <CaseStudySection id="tradeoffs" index={index()} title="Tradeoffs"><TextList items={dossier.tradeoffs} /></CaseStudySection> : null}
     {dossier.results ? <CaseStudySection id="results" index={index()} title="Results"><TextList items={dossier.results} /></CaseStudySection> : null}
     {dossier.limitations ? <CaseStudySection id="limitations" index={index()} title="Not claimed / next engineering boundaries"><TextList items={dossier.limitations} /></CaseStudySection> : null}

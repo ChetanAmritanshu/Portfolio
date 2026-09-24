@@ -25,8 +25,8 @@ export function ProfileHud() {
           <dd>{profile.location}</dd>
         </div>
         <div>
-          <dt>Codeforces</dt>
-          <dd>{profile.codeforces.rank} // {profile.codeforces.maxRating}</dd>
+          <dt>Competitive</dt>
+          <dd>{profile.codeforces.rank} // CodeChef {profile.codechef.rank}</dd>
         </div>
         <div>
           <dt>Current mode</dt>

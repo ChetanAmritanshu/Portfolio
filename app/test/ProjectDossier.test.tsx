@@ -49,6 +49,9 @@ describe("project dossiers", () => {
     expect(document.querySelector("#architecture")).not.toBeInTheDocument();
     expect(document.querySelector("#failure-modes")).not.toBeInTheDocument();
     expect(screen.getAllByText("30% reduction").length).toBeGreaterThan(0);
+    expect(screen.getByText("Production system // limited disclosure")).toBeInTheDocument();
+    expect(screen.getByText(/intentionally omitted due to client confidentiality/i)).toBeInTheDocument();
+    expect(screen.queryByText(/methodology.*pending/i)).not.toBeInTheDocument();
   });
 
   it("renders a semantic failure matrix with mobile labels", () => {
