@@ -26,7 +26,7 @@ export function ProfileHud() {
         </div>
         <div>
           <dt>Competitive</dt>
-          <dd>{profile.codeforces.rank} // CodeChef {profile.codechef.rank}</dd>
+          <dd>Codeforces {profile.codeforces.rank} // CodeChef {profile.codechef.rank}</dd>
         </div>
         <div>
           <dt>Current mode</dt>
