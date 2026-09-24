@@ -7,7 +7,9 @@ function normalizeBasePath(value: string | undefined): string {
   return normalized;
 }
 
-const basePath = normalizeBasePath(process.env.BASE_PATH);
+const basePath = normalizeBasePath(
+  process.env.NEXT_PUBLIC_BASE_PATH ?? process.env.BASE_PATH,
+);
 
 export const deployment = {
   basePath,
