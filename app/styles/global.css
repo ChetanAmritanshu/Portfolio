@@ -789,7 +789,7 @@ main { position: relative; z-index: var(--z-content); }
 .access-links a, .access-links span { border-left: 1px solid var(--color-line); color: var(--color-text); font: 600 .75rem/1 var(--font-display); min-height: 3.4rem; padding: .7rem; text-decoration: none; text-transform: uppercase; }
 .access-links small { color: var(--color-muted); display: block; font: .4rem/1.4 var(--font-mono); margin-top: .4rem; }
 
-.resume-shell { background: #05080d; min-height: 100vh; overflow: hidden; position: relative; }
+.resume-shell { background: #05080d; min-height: 100vh; overflow: clip; position: relative; }
 .resume-dossier { color: var(--color-text); min-height: 100vh; position: relative; z-index: 2; }
 .resume-topbar { align-items: center; backdrop-filter: blur(1rem); background: rgba(5,8,13,.88); border-bottom: 1px solid var(--color-line); display: grid; gap: 1rem; grid-template-columns: 1fr auto 1fr; min-height: 4.6rem; padding: .75rem clamp(1rem,4vw,4rem); position: sticky; top: 0; z-index: 20; }
 .resume-topbar > a,.resume-topbar nav a { color: var(--color-text); font: 600 .62rem/1 var(--font-display); letter-spacing: .12em; text-decoration: none; text-transform: uppercase; }
@@ -846,7 +846,7 @@ main { position: relative; z-index: var(--z-content); }
 .resume-paper-row { display: flex; font-size: .75rem; justify-content: space-between; }
 .resume-achievements { columns: 2; font-size: .7rem; line-height: 1.45; margin: 0; padding-left: 1.1rem; }
 .resume-mobile-annotation { display: none; }
-.resume-annotation-rail { min-width: 0; }
+.resume-annotation-rail { align-self: stretch; min-width: 0; }
 .resume-annotation-sticky { position: sticky; top: 7rem; }
 .resume-annotation-sticky > p { color: rgba(142,220,255,.55); font: .48rem/1 var(--font-mono); letter-spacing: .11em; margin: 0 0 1rem; text-transform: uppercase; }
 .resume-annotation { background: linear-gradient(150deg, rgba(12,27,39,.94), rgba(7,13,20,.97)), repeating-linear-gradient(0deg, transparent 0 23px, rgba(142,220,255,.025) 24px); border: 1px solid var(--color-line-strong); box-shadow: 0 1.5rem 4rem rgba(0,0,0,.28); min-width: 0; padding: 1.4rem; position: relative; }
