@@ -8,16 +8,12 @@ import {
 } from "~/lib/interactions";
 
 const particles = [
-  [12, 18, 0.7, 18],
-  [20, 62, 0.45, 24],
-  [31, 34, 0.6, 20],
-  [42, 72, 0.38, 28],
-  [53, 21, 0.52, 22],
-  [61, 55, 0.7, 17],
-  [70, 14, 0.42, 26],
-  [78, 68, 0.55, 21],
-  [86, 29, 0.68, 19],
-  [92, 51, 0.38, 29],
+  [14, 22, 0.28, 42],
+  [29, 66, 0.18, 50],
+  [45, 36, 0.22, 46],
+  [62, 58, 0.26, 39],
+  [77, 18, 0.16, 52],
+  [89, 49, 0.24, 44],
 ] as const;
 
 type ParticleStyle = CSSProperties & {
@@ -48,14 +44,14 @@ export function CommandEnvironment() {
       if (reducedMotion.matches || event.pointerType === "touch") return;
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(() => {
-        const x = (event.clientX / window.innerWidth - 0.5) * 12;
-        const y = (event.clientY / window.innerHeight - 0.5) * 8;
+        const x = (event.clientX / window.innerWidth - 0.5) * 7;
+        const y = (event.clientY / window.innerHeight - 0.5) * 5;
         root.style.setProperty("--motion-x", `${x.toFixed(2)}px`);
         root.style.setProperty("--motion-y", `${y.toFixed(2)}px`);
-        root.style.setProperty("--motion-x-soft", `${(x * 0.35).toFixed(2)}px`);
-        root.style.setProperty("--motion-y-soft", `${(y * 0.35).toFixed(2)}px`);
-        root.style.setProperty("--motion-x-reverse", `${(x * -0.7).toFixed(2)}px`);
-        root.style.setProperty("--motion-y-reverse", `${(y * -0.7).toFixed(2)}px`);
+        root.style.setProperty("--motion-x-soft", `${(x * 0.3).toFixed(2)}px`);
+        root.style.setProperty("--motion-y-soft", `${(y * 0.3).toFixed(2)}px`);
+        root.style.setProperty("--motion-x-reverse", `${(x * -0.55).toFixed(2)}px`);
+        root.style.setProperty("--motion-y-reverse", `${(y * -0.55).toFixed(2)}px`);
       });
     };
 

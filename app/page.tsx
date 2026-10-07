@@ -1,10 +1,12 @@
 import { AccessDock } from "~/components/AccessDock";
 import { CommandEnvironment } from "~/components/CommandEnvironment";
+import { EngineeringLabsSection } from "~/components/EngineeringLabsSection";
 import { IdentityHud } from "~/components/IdentityHud";
 import { ProfileHud } from "~/components/ProfileHud";
 import { ProjectSelector } from "~/components/ProjectSelector";
 import { SiteHeader } from "~/components/SiteHeader";
 import { SubjectSlot } from "~/components/SubjectSlot";
+import { TelemetryStrip } from "~/components/TelemetryStrip";
 
 export default function Home() {
   return (
@@ -24,7 +26,9 @@ export default function Home() {
           </a>
         </section>
 
+        <TelemetryStrip />
         <ProjectSelector />
+        <EngineeringLabsSection />
         <AccessDock />
       </main>
     </div>

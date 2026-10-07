@@ -74,6 +74,20 @@ export type Project = {
   dossier: ProjectDossier;
 };
 
+export type EngineeringLab = {
+  slug: "system-design" | "low-level-design";
+  index: string;
+  title: string;
+  subtitle: string;
+  status: string;
+  description: string;
+  accent: "cyan" | "violet";
+  topics: readonly string[];
+  signals: readonly string[];
+  repositoryUrl: string;
+  liveUrl: string;
+};
+
 export type Profile = {
   name: string;
   roles: readonly string[];

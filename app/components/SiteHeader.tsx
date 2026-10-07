@@ -9,6 +9,7 @@ import { SoundToggle } from "./SoundToggle";
 const navigation: ReadonlyArray<{ label: string; to: string | null; detail?: string }> = [
   { label: "Home", to: "/#home" },
   { label: "Systems", to: "/#systems", detail: "Projects" },
+  { label: "Labs", to: "/#labs", detail: "Design" },
   { label: "Experience", to: "/#profile" },
   { label: "Arsenal", to: "/#arsenal", detail: "Skills" },
   { label: "Logs", to: null, detail: "Writing" },

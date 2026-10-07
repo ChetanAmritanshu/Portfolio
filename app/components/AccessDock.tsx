@@ -17,9 +17,6 @@ export function AccessDock() {
             {profile.competitiveAchievements.map((achievement) => <li key={achievement}>{achievement}</li>)}
           </ul>
         </div>
-        <a className="engineering-resource" href="https://github.com/ChetanAmritanshu/High-Level-Design" target="_blank" rel="noopener noreferrer" aria-label="Open High-Level-Design engineering notes on GitHub">
-          High-Level-Design <small>Engineering notes // system design</small>
-        </a>
       </div>
       <div className="access-links">
         <p className="eyebrow">Direct access</p>
