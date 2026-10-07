@@ -88,6 +88,35 @@ export type EngineeringLab = {
   liveUrl: string;
 };
 
+export type ResumeMode = "recruiter" | "engineer";
+export type ResumeDiagramKind = "event-flow" | "coordination" | "retrieval" | "allocation" | "recovery";
+
+export type ResumeAnnotation = {
+  id: string;
+  resumeText: string;
+  label: string;
+  recruiterExplanation: readonly string[];
+  engineerExplanation: readonly string[];
+  metrics?: readonly string[];
+  diagram?: ResumeDiagramKind;
+  projectSlug?: Project["slug"];
+  projectLabel?: string;
+};
+
+export type ResumeTrack = {
+  title: string;
+  technology?: string;
+  bullets: readonly ResumeAnnotation[];
+};
+
+export type ResumeExperienceEntry = {
+  organization: string;
+  location: string;
+  role: string;
+  period: string;
+  tracks: readonly ResumeTrack[];
+};
+
 export type Profile = {
   name: string;
   roles: readonly string[];

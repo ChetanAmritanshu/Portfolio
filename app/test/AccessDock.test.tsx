@@ -18,10 +18,7 @@ describe("AccessDock", () => {
       expect(link).toHaveAttribute("rel", "noopener noreferrer");
     }
 
-    expect(screen.getByRole("link", { name: /resume PDF/i })).toHaveAttribute(
-      "href",
-      "/Chetan-Amritanshu-Resume.pdf",
-    );
+    expect(screen.getByRole("link", { name: /interactive resume dossier/i })).toHaveAttribute("href", "/resume");
     expect(screen.getByRole("link", { name: /email Chetan/i })).toHaveAttribute(
       "href",
       "mailto:chetan.amritanshu@gmail.com",

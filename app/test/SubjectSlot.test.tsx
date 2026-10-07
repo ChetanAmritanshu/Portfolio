@@ -12,7 +12,7 @@ describe("SubjectSlot", () => {
     });
 
     expect(decodeURIComponent(portrait.getAttribute("src") ?? "")).toContain(
-      "/images/chetan-portrait.webp",
+      "/images/chetan-hero-portrait.webp",
     );
     expect(screen.queryByText(/portrait asset 00/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/original artwork slot/i)).not.toBeInTheDocument();

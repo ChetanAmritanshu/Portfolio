@@ -3,7 +3,6 @@
 import Link from "next/link";
 
 import { dispatchAudioEvent } from "~/audio/events";
-import { externalLinks } from "~/content/profile";
 import { SoundToggle } from "./SoundToggle";
 
 const navigation: ReadonlyArray<{ label: string; to: string | null; detail?: string }> = [
@@ -17,8 +16,6 @@ const navigation: ReadonlyArray<{ label: string; to: string | null; detail?: str
 ];
 
 export function SiteHeader() {
-  const resume = externalLinks.find((link) => link.kind === "resume");
-
   return (
     <header className="site-header">
       <Link
@@ -62,13 +59,15 @@ export function SiteHeader() {
       </nav>
 
       <div className="header-actions">
-        {resume?.href ? (
-          <a href={resume.href} target="_blank" rel="noopener noreferrer" aria-label={resume.ariaLabel}>Resume</a>
-        ) : (
-          <span className="link-placeholder" aria-label="Resume link pending">
-            Resume // Pending
-          </span>
-        )}
+        <Link
+          aria-label="Open interactive resume dossier"
+          href="/resume/"
+          onClick={() => dispatchAudioEvent({ name: "navigation:enter" })}
+          onFocus={() => dispatchAudioEvent({ name: "ui:focus" })}
+          onPointerEnter={() => dispatchAudioEvent({ name: "ui:hover" })}
+        >
+          Resume
+        </Link>
         <SoundToggle />
       </div>
     </header>

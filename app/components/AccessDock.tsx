@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { externalLinks, profile } from "~/content/profile";
 
 const skills = ["Go", "C++", "Java", "Python", "Kafka", "Redis", "PostgreSQL", "gRPC", "Linux", "AWS"];
@@ -22,7 +24,11 @@ export function AccessDock() {
         <p className="eyebrow">Direct access</p>
         <div>
           {externalLinks.map((link) =>
-            link.href ? (
+            link.kind === "resume" ? (
+              <Link key={link.kind} href="/resume/" aria-label="Open interactive resume dossier">
+                Resume<small>Decoded dossier</small>
+              </Link>
+            ) : link.href ? (
               <a key={link.kind} href={link.href} target={link.newTab ? "_blank" : undefined} rel={link.newTab ? "noopener noreferrer" : undefined} aria-label={link.ariaLabel}>
                 {link.label}<small>{link.detail}</small>
               </a>
