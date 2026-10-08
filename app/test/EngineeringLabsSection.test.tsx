@@ -14,7 +14,7 @@ describe("EngineeringLabsSection", () => {
     const lld = screen.getByRole("link", { name: "Enter Low Level Design Lab" });
     expect(hld).toHaveAttribute(
       "href",
-      "https://chetanamritanshu.github.io/High-Level-Design/",
+      "https://chetanamritanshu.github.io/System-Design-Lab/",
     );
     expect(lld).toHaveAttribute(
       "href",

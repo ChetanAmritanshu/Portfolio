@@ -26,7 +26,7 @@ export const engineeringLabs: readonly EngineeringLab[] = [
       "Production trade-offs",
     ],
     repositoryUrl: "https://github.com/ChetanAmritanshu/High-Level-Design",
-    liveUrl: "https://chetanamritanshu.github.io/High-Level-Design/",
+    liveUrl: "https://chetanamritanshu.github.io/System-Design-Lab/",
   },
   {
     slug: "low-level-design",
