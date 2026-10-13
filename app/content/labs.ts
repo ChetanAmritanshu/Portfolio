@@ -57,4 +57,31 @@ export const engineeringLabs: readonly EngineeringLab[] = [
     repositoryUrl: "https://github.com/ChetanAmritanshu/Low-Level-Design-Lab",
     liveUrl: "https://chetanamritanshu.github.io/Low-Level-Design-Lab/",
   },
+  {
+    slug: "agentic-ai",
+    index: "03",
+    title: "Agentic AI Engineering Lab",
+    subtitle: "AI Agents / LLM Engineering",
+    status: "04 chapters online",
+    description:
+      "From your first AI tool call to production-ready autonomous systems. Explore agents through interactive simulations, tool orchestration, failure injection and real engineering challenges.",
+    accent: "mint",
+    featured: true,
+    topics: [
+      "Next.js",
+      "TypeScript",
+      "AI Agents",
+      "Tool Calling",
+      "LLMs",
+    ],
+    signals: [
+      "Interactive agent loops",
+      "Chatbot versus agent labs",
+      "Bob-guided learning activities",
+      "Failure simulations",
+      "Chapter challenges",
+    ],
+    repositoryUrl: "https://github.com/ChetanAmritanshu/Agentic-AI-Engineering-Lab",
+    liveUrl: "https://chetanamritanshu.github.io/Agentic-AI-Engineering-Lab/",
+  },
 ] as const;

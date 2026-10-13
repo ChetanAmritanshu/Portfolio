@@ -75,13 +75,14 @@ export type Project = {
 };
 
 export type EngineeringLab = {
-  slug: "system-design" | "low-level-design";
+  slug: "system-design" | "low-level-design" | "agentic-ai";
   index: string;
   title: string;
   subtitle: string;
   status: string;
   description: string;
-  accent: "cyan" | "violet";
+  accent: "cyan" | "violet" | "mint";
+  featured?: boolean;
   topics: readonly string[];
   signals: readonly string[];
   repositoryUrl: string;

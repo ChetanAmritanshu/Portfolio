@@ -10,7 +10,7 @@ export function EngineeringLabsSection() {
           <p className="eyebrow">Technical proof-of-work</p>
           <h2 id="labs-title">Engineering Labs</h2>
         </div>
-        <div className="labs-count"><span>02</span> training environments</div>
+        <div className="labs-count"><span>{String(engineeringLabs.length).padStart(2, "0")}</span> engineering divisions</div>
       </header>
 
       <div className="labs-grid">

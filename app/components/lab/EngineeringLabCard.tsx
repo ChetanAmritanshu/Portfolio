@@ -1,10 +1,66 @@
 import type { EngineeringLab } from "~/content/types";
 import { AudioAnchor } from "~/components/AudioAnchor";
 
+import { AgentOrchestrationPreview } from "./AgentOrchestrationPreview";
 import { ObjectModelPreview } from "./ObjectModelPreview";
 import { SystemTopologyPreview } from "./SystemTopologyPreview";
 
 export function EngineeringLabCard({ lab }: { lab: EngineeringLab }) {
+  if (lab.featured) {
+    return (
+      <article className={`lab-card lab-card--${lab.accent} lab-card--featured`}>
+        <div className="lab-card-link lab-card-link--featured">
+          <header className="lab-card-header">
+            <span>Lab // {lab.index}</span>
+            <span className="lab-status"><i aria-hidden="true" />{lab.status}</span>
+          </header>
+
+          <div className="lab-card-title">
+            <p>{lab.subtitle}</p>
+            <h3>{lab.title}</h3>
+            <span>{lab.description}</span>
+          </div>
+
+          <div className="lab-visual lab-visual--agentic">
+            <AgentOrchestrationPreview />
+            <span className="lab-trace-label">Agent trace // deterministic</span>
+          </div>
+
+          <ul className="lab-topics" aria-label={`${lab.title} technologies`}>
+            {lab.topics.map((topic) => <li key={topic}>{topic}</li>)}
+          </ul>
+
+          <footer className="lab-card-footer">
+            <ul className="lab-signals" aria-label={`${lab.title} implemented features`}>
+              {lab.signals.map((signal) => <li key={signal}>{signal}</li>)}
+            </ul>
+            <div className="lab-featured-actions">
+              <AudioAnchor
+                aria-label={`Launch ${lab.title}`}
+                className="lab-launch-link"
+                eventName="navigation:enter"
+                href={lab.liveUrl}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Launch lab <b aria-hidden="true">→</b>
+              </AudioAnchor>
+              <a
+                aria-label={`View ${lab.title} source repository on GitHub`}
+                className="lab-source-link"
+                href={lab.repositoryUrl}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                View source ↗
+              </a>
+            </div>
+          </footer>
+        </div>
+      </article>
+    );
+  }
+
   return (
     <article className={`lab-card lab-card--${lab.accent}`}>
       <AudioAnchor
@@ -16,7 +72,7 @@ export function EngineeringLabCard({ lab }: { lab: EngineeringLab }) {
         target="_blank"
       >
         <header className="lab-card-header">
-          <span>Lab / {lab.index}</span>
+          <span>Lab // {lab.index}</span>
           <span className="lab-status"><i aria-hidden="true" />{lab.status}</span>
         </header>
 
